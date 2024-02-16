@@ -5,7 +5,6 @@ import function.Function;
 public class Network {
     private static Layer[] layers;
     private static Data[] datasets;
-    private static final boolean DEBUG = false;
 
     public Network(int[] nLayers, Function[] functions, Data[] data) {
         Neuron.setRangeWeight(-1, 1);
@@ -99,8 +98,7 @@ public class Network {
             }
 
             double averageLoss = totalLoss / datasets.length;
-            if (!DEBUG) continue;
-            System.out.println("Iteration " + (i + 1) + ", Average Loss: " + averageLoss);
+            //System.out.println("Iteration " + (i + 1) + ", Average Loss: " + averageLoss);
         }
     }
 
