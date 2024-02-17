@@ -2,6 +2,8 @@ package container;
 
 import function.Function;
 
+import static util.Metrics.squaredError;
+
 public class Network {
     private static Layer[] layers;
     private static Data[] datasets;
@@ -98,7 +100,7 @@ public class Network {
             }
 
             double averageLoss = totalLoss / datasets.length;
-            //System.out.println("Iteration " + (i + 1) + ", Average Loss: " + averageLoss);
+            System.out.println("Iteration " + (i + 1) + ", Average Loss: " + averageLoss);
         }
     }
 
@@ -106,18 +108,18 @@ public class Network {
         double squaredErrorSum = 0.0;
         for (int i = 0; i < outputNeurons.length; i++) {
             double output = outputNeurons[i].getValue();
-            double error = expectedOutput[i] - output;
-            squaredErrorSum += error * error;
+            squaredErrorSum += squaredError(output, expectedOutput[i]);
         }
-        double mse = squaredErrorSum / outputNeurons.length;
-        return Math.sqrt(mse);
+        return squaredErrorSum / outputNeurons.length;
     }
 
     public void displayOutputLayer() {
         System.out.println("Output functions:");
         for (Data dataset : datasets) {
             forward(dataset.getData());
-            System.out.println(layers[2].getNeurons()[0].getValue());
+            for (Neuron neuron: layers[layers.length - 1].getNeurons()) {
+                System.out.println(neuron.getValue());
+            }
         }
     }
 
