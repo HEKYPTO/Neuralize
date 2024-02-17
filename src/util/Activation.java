@@ -14,8 +14,8 @@ public class Activation {
         return Math.max(0, val);
     }
 
-    public static double sigmoidDerivative(double x) {
-        return sigmoid(x) * (1 - sigmoid(x));
+    public static double sigmoidDerivative(double val) {
+        return sigmoid(val) * (1 - sigmoid(val));
     }
 
     public static double tanhDerivative(double val) {
