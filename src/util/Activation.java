@@ -26,5 +26,4 @@ public class Activation {
         return val > 0 ? 1: 0;
     }
 
-
 }

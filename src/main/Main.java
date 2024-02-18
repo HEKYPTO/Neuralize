@@ -39,7 +39,7 @@ public class Main {
 //        System.out.println("Start Training ? : ");
 //        String _k = sc.nextLine();
 
-        network.train(1_000_000, 0.05);
+        Network.train(1_000_000, 0.05);
 
         network.displayOutputLayer();
     }

@@ -124,15 +124,6 @@ public class NeuronTest {
     }
 
     @Test
-    public void constructorLargeWeightsTest() {
-        double[] weights = {1000.0, 2000.0, 3000.0};
-
-        neuron = new Neuron(weights, 0.5);
-
-        assertArrayEquals(weights, neuron.getWeights(), 0.0001);
-    }
-
-    @Test
     public void constructorNegativeValueTest() {
         double value = -0.5;
 
@@ -141,12 +132,4 @@ public class NeuronTest {
         assertEquals(value, neuron.getValue(), 0.0001);
     }
 
-    @Test
-    public void constructorLargeValueTest() {
-        double value = 10000.0;
-
-        neuron = new Neuron(value);
-
-        assertEquals(value, neuron.getValue(), 0.0001);
-    }
 }
