@@ -36,8 +36,8 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         System.out.println();
-        System.out.println("Start Training ? : ");
-        String _k = sc.nextLine();
+//        System.out.println("Start Training ? : ");
+//        String _k = sc.nextLine();
 
         Network.train(1_000_000, 0.05);
 
