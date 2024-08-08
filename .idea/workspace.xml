@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5860ef5a-a301-43f0-b9c9-f1d954e147a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuralize.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Neuralize.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mnist-test-processed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mnist-test-processed.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mnist-train-processed.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mnist-train-processed.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved_weights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saved_weights.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/image_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/image_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/image_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/image_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/sample/image_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/sample/image_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/sample/image_7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/sample/image_9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +47,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\Repo\Neuralize\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
@@ -99,7 +90,7 @@
       <updated>1723122552233</updated>
       <workItem from="1723122553946" duration="7000" />
       <workItem from="1723122731164" duration="40000" />
-      <workItem from="1723122775350" duration="367000" />
+      <workItem from="1723122775350" duration="759000" />
     </task>
     <servers />
   </component>
