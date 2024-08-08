@@ -29,7 +29,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input filename from sample folder: ");
         String line = scanner.nextLine().trim();
-        double[] sample = ImageProcessor.process("src/sample/" + line + ".jpg");
+        double[] sample = ImageProcessor.process("src/image/" + line + ".jpg");
         double[] result = Network.predict(sample);
         int index = findIndexOfMax(result);
 

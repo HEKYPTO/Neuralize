@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5860ef5a-a301-43f0-b9c9-f1d954e147a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/image_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image_0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/image_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/image_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image_7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/image_9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image_9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/image/image_0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/image/image_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/image/image_7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/image/image_9.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +46,7 @@
     "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/User/Documents/Repo/Neuralize",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,10 +55,14 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\Repo\Neuralize" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Documents\Repo\Neuralize\src" />
     </key>
@@ -91,10 +106,15 @@
       <workItem from="1723122553946" duration="7000" />
       <workItem from="1723122731164" duration="40000" />
       <workItem from="1723122775350" duration="759000" />
+      <workItem from="1723123591051" duration="8688000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

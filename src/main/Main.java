@@ -7,7 +7,6 @@ import util.DataReader;
 import util.ImageProcessor;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -29,11 +28,11 @@ public class Main {
          Scanner scanner = new Scanner(System.in);
          System.out.print("Input filename from sample folder: ");
          String line = scanner.nextLine().trim();
-         double[] sample = ImageProcessor.process("src/sample/" + line + ".jpg");
+         double[] sample = ImageProcessor.process("src/image/" + line + ".jpg");
          double[] result = Network.predict(sample);
          int index = findIndexOfMax(result);
 
-         System.out.printf("The prediction is: %d, Confidence: %.6f%n", index, result[index]);
+         System.out.printf("The prediction is: %d Confidence: %.6f%n", index, result[index]);
     }
 
     public static int findIndexOfMax(double[] values) {
