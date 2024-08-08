@@ -34,7 +34,7 @@ public class ActivationTest {
     }
 
     @Test
-    public void sigmoidTest() {
+    public void testSigmoid() {
         v1.forEach(e -> {
             int idx = v1.indexOf(e);
             v1.set(idx, Activation.sigmoid(e));
@@ -58,7 +58,7 @@ public class ActivationTest {
     }
 
     @Test
-    public void sigmoidDerivativeTest() {
+    public void testSigmoidDerivative() {
         v1.forEach(e -> {
             int idx = v1.indexOf(e);
             v1.set(idx, Activation.sigmoidDerivative(e));
@@ -82,7 +82,7 @@ public class ActivationTest {
     }
 
     @Test
-    public void tanhTest() {
+    public void testTanh() {
         v1.forEach(e -> {
             int idx = v1.indexOf(e);
             v1.set(idx, Activation.tanh(e));
@@ -104,7 +104,7 @@ public class ActivationTest {
     }
 
     @Test
-    public void tanhDerivativeTest() {
+    public void testTanhDerivative() {
         v1.forEach(e -> {
             int idx = v1.indexOf(e);
             v1.set(idx, Activation.tanhDerivative(e));
@@ -127,7 +127,7 @@ public class ActivationTest {
     }
 
     @Test
-    public void reluTest() {
+    public void testRelu() {
         v1.forEach(e -> {
             int idx = v1.indexOf(e);
             v1.set(idx, Activation.relu(e));
@@ -149,7 +149,7 @@ public class ActivationTest {
     }
 
     @Test
-    public void reluDerivativeTest() {
+    public void testReluDerivative() {
         v1.forEach(e -> {
             int idx = v1.indexOf(e);
             v1.set(idx, Activation.reluDerivative(e));

@@ -11,9 +11,10 @@ import util.GenRandom;
 public class NeuronTest {
 
     Neuron neuron;
+    private final static double DELTA = 0.0001;
 
     @Test
-    public void constructorWeightedTest() {
+    public void testConstructorWeighted() {
         int len = 4;
         double[] weight = new double[len];
 
@@ -23,113 +24,100 @@ public class NeuronTest {
 
         Neuron neuron = new Neuron(weight, 0);
 
-        assertArrayEquals(weight, neuron.getWeights(), 0.0001);
-        assertArrayEquals(weight, neuron.getCacheWeights(), 0.0001);
-        assertEquals(0, neuron.getBias(), 0.0001);
-        assertEquals(0, neuron.getValue(), 0.0001);
-        assertEquals(0, neuron.getGradient(), 0.0001);
+        assertArrayEquals(weight, neuron.getWeights(), DELTA);
+        assertEquals(0, neuron.getBias(), DELTA);
+        assertEquals(0, neuron.getValue(), DELTA);
+        assertEquals(0, neuron.getGradient(), DELTA);
     }
 
     @Test
-    public void constructorValueTest() {
+    public void testConstructorValue() {
         double value = 0.7;
 
         Neuron neuron = new Neuron(value);
 
         assertNull(neuron.getWeights());
-        assertNull(neuron.getCacheWeights());
-        assertEquals(value, neuron.getValue(), 0.0001);
-        assertEquals(-1, neuron.getBias(), 0.0001);
-        assertEquals(-1, neuron.getGradient(), 0.0001);
+        assertEquals(value, neuron.getValue(), DELTA);
+        assertEquals(-1, neuron.getBias(), DELTA);
+        assertEquals(-1, neuron.getGradient(), DELTA);
     }
 
     @Test
-    public void rangeWeightSet() {
-        double min = -0.5;
-        double max = 0.5;
+    public void testWeightRange() { // Is static modifier
+        Neuron.setRangeWeight(-2, -1);
+        assertEquals(-2, Neuron.getMinWeightValue(), DELTA);
+        assertEquals(-1, Neuron.getMaxWeightValue(), DELTA);
 
-        Neuron.setRangeWeight(min, max);
-
-        assertEquals(min, Neuron.getMinWeightValue(), 0.0001);
-        assertEquals(max, Neuron.getMaxWeightValue(), 0.0001);
+        Neuron.setRangeWeight(-1, 1);
+        assertEquals(-1, Neuron.getMinWeightValue(), DELTA);
+        assertEquals(1, Neuron.getMaxWeightValue(), DELTA);
     }
 
     @Test
-    public void getAndSetWeightsTest() {
+    public void testGetAndSetWeights() {
         double[] weights = {0.1, 0.2, 0.3};
 
         neuron = new Neuron(0.5);
         neuron.setWeights(weights);
 
-        assertArrayEquals(weights, neuron.getWeights(), 0.0001);
+        assertArrayEquals(weights, neuron.getWeights(), DELTA);
     }
 
     @Test
-    public void getAndSetCacheWeightsTest() {
-        double[] cacheWeights = {0.3, 0.2, 0.1};
-
-        neuron = new Neuron(0.5);
-        neuron.setCacheWeights(cacheWeights);
-
-        assertArrayEquals(cacheWeights, neuron.getCacheWeights(), 0.0001);
-    }
-
-    @Test
-    public void getAndSetBiasTest() {
+    public void testGetAndSetBias() {
         double bias = -0.3;
 
         neuron = new Neuron(0.5);
         neuron.setBias(bias);
 
-        assertEquals(bias, neuron.getBias(), 0.0001);
+        assertEquals(bias, neuron.getBias(), DELTA);
     }
 
     @Test
-    public void getAndSetValueTest() {
+    public void testGetAndSetValue() {
         double value = 0.8;
 
         neuron = new Neuron(0.5);
         neuron.setValue(value);
 
-        assertEquals(value, neuron.getValue(), 0.0001);
+        assertEquals(value, neuron.getValue(), DELTA);
     }
 
     @Test
-    public void getAndSetGradientTest() {
+    public void testGetAndSetGradient() {
         double gradient = -0.2;
 
         neuron = new Neuron(0.5);
         neuron.setGradient(gradient);
 
-        assertEquals(gradient, neuron.getGradient(), 0.0001);
+        assertEquals(gradient, neuron.getGradient(), DELTA);
     }
 
     @Test
-    public void constructorEmptyWeightsTest() {
+    public void testConstructorEmptyWeights() {
         double[] weights = {};
 
         neuron = new Neuron(weights, 0.5);
 
-        assertArrayEquals(weights, neuron.getWeights(), 0.0001);
-        assertArrayEquals(weights, neuron.getCacheWeights(), 0.0001);
+        assertArrayEquals(weights, neuron.getWeights(), DELTA);
     }
 
     @Test
-    public void constructorNegativeBiasTest() {
+    public void testConstructorNegativeBias() {
         double bias = -0.7;
 
         neuron = new Neuron(new double[]{0.1, 0.2}, bias);
 
-        assertEquals(bias, neuron.getBias(), 0.0001);
+        assertEquals(bias, neuron.getBias(), DELTA);
     }
 
     @Test
-    public void constructorNegativeValueTest() {
+    public void testConstructorNegativeValue() {
         double value = -0.5;
 
         neuron = new Neuron(value);
 
-        assertEquals(value, neuron.getValue(), 0.0001);
+        assertEquals(value, neuron.getValue(), DELTA);
     }
 
 }

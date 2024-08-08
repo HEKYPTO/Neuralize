@@ -6,7 +6,6 @@ public class Neuron {
     private static double maxWeightValue;
 
     private double[] weights;
-    private double[] cacheWeights;
     private double gradient;
     private double bias;
     private double value = 0;
@@ -14,14 +13,12 @@ public class Neuron {
     public Neuron(double[] weights, double bias){
         this.weights = weights;
         this.bias = bias;
-        this.cacheWeights = this.weights;
         this.gradient = 0;
     }
 
     public Neuron(double value){
         this.weights = null;
         this.bias = -1;
-        this.cacheWeights = null;
         this.gradient = -1;
         this.value = value;
     }
@@ -29,10 +26,6 @@ public class Neuron {
     public static void setRangeWeight(double min, double max) {
         minWeightValue = min;
         maxWeightValue = max;
-    }
-
-    public void updateWeights() {
-        this.weights = this.cacheWeights;
     }
 
     public static double getMinWeightValue() {
@@ -57,14 +50,6 @@ public class Neuron {
 
     public void setWeights(double[] weights) {
         this.weights = weights;
-    }
-
-    public double[] getCacheWeights() {
-        return cacheWeights;
-    }
-
-    public void setCacheWeights(double[] cacheWeights) {
-        this.cacheWeights = cacheWeights;
     }
 
     public double getGradient() {
