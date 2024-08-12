@@ -43,14 +43,15 @@ public class NeuronTest {
     }
 
     @Test
-    public void testWeightRange() { // Is static modifier
+    public void testWeightRange() {
+
         Neuron.setRangeWeight(-2, -1);
         assertEquals(-2, Neuron.getMinWeightValue(), DELTA);
         assertEquals(-1, Neuron.getMaxWeightValue(), DELTA);
 
-        Neuron.setRangeWeight(-1, 1);
+        Neuron.setRangeWeight(-1, 0);
         assertEquals(-1, Neuron.getMinWeightValue(), DELTA);
-        assertEquals(1, Neuron.getMaxWeightValue(), DELTA);
+        assertEquals(0, Neuron.getMaxWeightValue(), DELTA);
     }
 
     @Test

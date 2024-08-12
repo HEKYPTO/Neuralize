@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5860ef5a-a301-43f0-b9c9-f1d954e147a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/image_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/image_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/image_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image_7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/image_9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image_9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/image/image_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/image/image_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/image/image_7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toStudent/src/sample/image_9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/image/image_9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/GenRandomTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/NeuronTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/NeuronTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/GenRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/GenRandom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +31,9 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.NeuronTest.executor": "Run",
+    "JUnit.NeuronTest.testWeightRange.executor": "Run",
+    "JUnit.test in Neuralize.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -67,7 +63,7 @@
       <recent name="C:\Users\User\Documents\Repo\Neuralize\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.test in Neuralize">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Neuralize" />
@@ -81,8 +77,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NeuronTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Neuralize" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.NeuronTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NeuronTest.testWeightRange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Neuralize" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.NeuronTest" />
+      <option name="METHOD_NAME" value="testWeightRange" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test in Neuralize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Neuralize" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.test in Neuralize" />
+        <item itemvalue="JUnit.NeuronTest.testWeightRange" />
+        <item itemvalue="JUnit.NeuronTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -106,7 +150,9 @@
       <workItem from="1723122553946" duration="7000" />
       <workItem from="1723122731164" duration="40000" />
       <workItem from="1723122775350" duration="759000" />
-      <workItem from="1723123591051" duration="8688000" />
+      <workItem from="1723123591051" duration="10612000" />
+      <workItem from="1723145468191" duration="8000" />
+      <workItem from="1723485904854" duration="1741000" />
     </task>
     <servers />
   </component>
