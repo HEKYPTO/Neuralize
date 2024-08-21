@@ -91,7 +91,7 @@ public class Network {
             double totalLoss = 0;
 
             for (Data dataset : datasets) {
-                forward(dataset.getData());
+                forward(dataset.getInput());
 
                 double instanceLoss = calculateLoss(layers[layers.length - 1].getNeurons(), dataset.getOutput());
                 totalLoss += instanceLoss;

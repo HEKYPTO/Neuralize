@@ -1,21 +1,20 @@
 package test;
 
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import util.Activation;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ActivationTest {
 
     ArrayList<Double> v1 = new ArrayList<>();
     ArrayList<ArrayList<Double>> v2 = new ArrayList<>();
 
-    @Before
+    @BeforeEach
     public void setup() {
         final long SEED = 42;
         Random random = new Random(SEED);

@@ -3,14 +3,15 @@ package test;
 import container.Data;
 import container.Network;
 import function.Function;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import util.GenRandom;
 
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 public class NetworkTest { // Ignore static inferences
 
@@ -18,7 +19,7 @@ public class NetworkTest { // Ignore static inferences
 
     private Network network;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         GenRandom.random = new Random(42);
         int[] nLayers = {2, 8, 1};

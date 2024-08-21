@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5860ef5a-a301-43f0-b9c9-f1d954e147a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/GenRandomTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuralize.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Neuralize.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ActivationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ActivationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/LayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/LayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/NetworkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/NetworkTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/NeuronTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/NeuronTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/GenRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/GenRandom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +54,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default",
@@ -153,6 +159,8 @@
       <workItem from="1723123591051" duration="10612000" />
       <workItem from="1723145468191" duration="8000" />
       <workItem from="1723485904854" duration="1741000" />
+      <workItem from="1723505816628" duration="251000" />
+      <workItem from="1724253609161" duration="822000" />
     </task>
     <servers />
   </component>
