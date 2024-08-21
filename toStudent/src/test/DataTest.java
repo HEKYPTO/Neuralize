@@ -1,10 +1,10 @@
 package test;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import container.Data;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DataTest {
 
@@ -15,17 +15,17 @@ public class DataTest {
         Data dataset = new Data(inputData, outputData);
 
         assertNotNull(dataset);
-        assertArrayEquals(inputData, dataset.getData(), 0.0);
+        assertArrayEquals(inputData, dataset.getInput(), 0.0);
         assertArrayEquals(outputData, dataset.getOutput(), 0.0);
     }
 
     @Test
-    public void testSetData() {
+    public void testSetInput() {
         double[] newData = {7.0, 8.0, 9.0};
         double[] outputData = {4.0, 5.0, 6.0};
         Data dataset = new Data(new double[0], outputData);
-        dataset.setData(newData);
-        assertArrayEquals(newData, dataset.getData(), 0.0);
+        dataset.setInput(newData);
+        assertArrayEquals(newData, dataset.getInput(), 0.0);
     }
 
     @Test
@@ -38,11 +38,11 @@ public class DataTest {
     }
 
     @Test
-    public void testSetDataWithNull() {
+    public void testSetInputWithNull() {
         double[] outputData = {4.0, 5.0, 6.0};
         Data dataset = new Data(new double[]{1.0, 2.0, 3.0}, outputData);
-        dataset.setData(null);
-        assertNull(dataset.getData());
+        dataset.setInput(null);
+        assertNull(dataset.getInput());
     }
 
     @Test

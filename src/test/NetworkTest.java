@@ -100,9 +100,21 @@ public class NetworkTest { // Ignore static inferences
 
     @Test
     public void testSumGradient() {
+        Network.forward(new double[]{0, 0});
+        double sumGradient1 = Network.sumGradient(0, 2);
+        assertEquals(0, sumGradient1, 0.01);
+
         Network.forward(new double[]{1, 0});
-        double sumGradient = Network.sumGradient(0, 2);
-        assertEquals(0, sumGradient, 0.01);
+        double sumGradient2 = Network.sumGradient(0, 2);
+        assertEquals(0, sumGradient2, 0.01);
+
+        Network.forward(new double[]{0, 1});
+        double sumGradient3 = Network.sumGradient(0, 2);
+        assertEquals(0, sumGradient3, 0.01);
+
+        Network.forward(new double[]{1, 1});
+        double sumGradient4 = Network.sumGradient(0, 2);
+        assertEquals(0, sumGradient4, 0.01);
     }
 
     @Test

@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5860ef5a-a301-43f0-b9c9-f1d954e147a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuralize.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Neuralize.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/container/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/container/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Network.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/ActivationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ActivationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/LayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/LayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/NetworkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/NetworkTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/NeuronTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/NeuronTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/container/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/container/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/test/ActivationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/test/ActivationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/test/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/test/DataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/test/LayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/test/LayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/test/NetworkTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toStudent/src/test/NeuronTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/toStudent/src/test/NeuronTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +36,8 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ActivationTest.executor": "Run",
+    "JUnit.NetworkTest.testSumGradient.executor": "Run",
     "JUnit.NeuronTest.executor": "Run",
     "JUnit.NeuronTest.testWeightRange.executor": "Run",
     "JUnit.test in Neuralize.executor": "Run",
@@ -48,7 +49,7 @@
     "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Documents/Repo/Neuralize",
+    "last_opened_file_path": "C:/Users/User/Documents/Repo/Neuralize/toStudent/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,22 +64,41 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\Repo\Neuralize\toStudent\src" />
       <recent name="C:\Users\User\Documents\Repo\Neuralize" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Documents\Repo\Neuralize\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.test in Neuralize">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
+  <component name="RunManager" selected="JUnit.ActivationTest">
+    <configuration name="ActivationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Neuralize" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ActivationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NetworkTest.testSumGradient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Neuralize" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.NetworkTest" />
+      <option name="METHOD_NAME" value="testSumGradient" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,10 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ActivationTest" />
+        <item itemvalue="JUnit.NetworkTest.testSumGradient" />
         <item itemvalue="JUnit.test in Neuralize" />
         <item itemvalue="JUnit.NeuronTest.testWeightRange" />
         <item itemvalue="JUnit.NeuronTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +182,7 @@
       <workItem from="1723485904854" duration="1741000" />
       <workItem from="1723505816628" duration="251000" />
       <workItem from="1724253609161" duration="822000" />
+      <workItem from="1724254447226" duration="2719000" />
     </task>
     <servers />
   </component>

@@ -10,9 +10,16 @@ public class Network {
     private static Data[] datasets;
 
     public Network(int[] nLayers, Function[] functions, Data[] data) {
-        // TODO: Fill the constructor of this class
-        //
-        // END
+        Neuron.setRangeWeight(-1, 1);
+
+        layers = new Layer[nLayers.length];
+        layers[0] = null; // Initialize input layer
+        for (int i = 1; i < nLayers.length; i++) {
+            layers[i] = new Layer(nLayers[i - 1], nLayers[i], functions[i - 1]);
+        }
+
+        datasets = new Data[data.length];
+        System.arraycopy(data, 0, datasets, 0, data.length);
     }
 
     public static void forward(double[] inputs) {
@@ -30,7 +37,7 @@ public class Network {
         }
     }
 
-    public static void backward(double learningRate, Data tData) { // This required further knowledge in NN (Out of this class scope)
+    public static void backward(double learningRate, Data tData) {
         int nLayers = layers.length;
         int outIndex = nLayers - 1;
 
@@ -71,62 +78,50 @@ public class Network {
     }
 
     public static double sumGradient(int nIndex, int lIndex) {
-        // TODO: FILL THIS METHOD
-        // This method computes the SUM of gradients for a specific weight index across neurons in a given layer of a neural network.
-        // Access the layer specified by `lIndex` using the layers array.
-        //
-        // Iterate over each neuron in the current “lIndex” layer.
-        // For each neuron, retrieve the weight at index `nIndex` and multiply it by the gradient of the neuron.
-        //
-        // Return the sum value
-        //
-        //
-        return 0; // CHANGE THIS !
-        // END
+        double gradientSum = 0;
+        Layer currentLayer = layers[lIndex];
+        for (Neuron neuron : currentLayer.getNeurons()) {
+            gradientSum += neuron.getWeights()[nIndex] * neuron.getGradient();
+        }
+        return gradientSum;
     }
 
     public static void train(int trainingIterations, double learningRate) {
-        // TODO: FILL THIS METHOD
-        // This method iterates over the training dataset for the specified number of training Iterations.
-        // -> Within each iteration:
-        //      Initializes double totalLoss variable to accumulate the total loss over all data in the dataset.
-        //      loops over each data in the datasets array.
-        //      -> In Each loops of the dataset:
-        //          Performs a forward method using data value, use getData to access data.
-        //          Performs a backward method to update the network's parameters (weights) based on the learning rate and dataset.
-        //             Calculate loss using its function by passing variables with Last layers’ neurons (use “getNeurons” from the last layer) and dataset output (use “dataset.getOutput” ) and the result to the variable totalLoss.
-        //      Calculates the average loss across all instances (By totalLoss over datasets length)
-        //      Print out the iteration number and average loss.
-        //
-        // END
+        for(int i = 0; i < trainingIterations; i++) {
+            double totalLoss = 0;
+
+            for (Data dataset : datasets) {
+                forward(dataset.getInput());
+
+                double instanceLoss = calculateLoss(layers[layers.length - 1].getNeurons(), dataset.getOutput());
+                totalLoss += instanceLoss;
+
+                backward(learningRate, dataset);
+            }
+
+            double averageLoss = totalLoss / datasets.length;
+            System.out.println("Iteration " + (i + 1) + ", Average Loss: " + averageLoss);
+        }
     }
 
     public static double calculateLoss(Neuron[] outputNeurons, double[] expectedOutput) {
-        // TODO: FILL THIS METHOD
-        // Using sqaure error as loss metrics
-        // Initialize variables to store the error value.
-        // -> Iterate over each output neuron using a for loop.
-        //      Get the error as the differences between each the expectedOutput array and each neuron array value.
-        //      Add the error square margin to the previous initialized value.
-        //
-        // Return the average squared error with the total number of output neurons. (Average can be get by multiplying overall error by 0.5)
-        //
-        return 0; // CHANGE THIS !
-        // END
+        double squaredError = 0.0;
+        for (int i = 0; i < outputNeurons.length; i++) {
+            double error = expectedOutput[i] - outputNeurons[i].getValue();
+            squaredError += error * error; // MSQ ERR
+        }
+        return 0.5 * squaredError;
     }
 
     public static double[] predict(double[] data) {
-        // TODO: FILL THIS METHOD
-        // Call method forward and give data array as input.
-        // Initialize prediction array with double type with matching length of the last Layer of Neuron.
-        // -> Then for each index in the prediction array,
-        //      assing the value of each Nueron on the last Layer to prediction index value.
-        //      (Basically copy the last output of each Neuron value to the double array).
-        //
-        // Return the array.
-        //
-        return null; // CHANGE THIS !
-        // END
+        assert data.length == layers[0].getNeurons().length;
+        forward(data);
+        double[] prediction = new double[layers[layers.length - 1].getNeurons().length];
+        for (int i = 0; i < prediction.length; i++) {
+            prediction[i] = layers[layers.length - 1].getNeurons()[i].getValue();
+        }
+
+        return prediction;
     }
 
     public void save(String filename) {

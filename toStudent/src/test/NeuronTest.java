@@ -1,20 +1,18 @@
 package test;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertNull;
-
 import container.Neuron;
+import org.junit.jupiter.api.Test;
 import util.GenRandom;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NeuronTest {
 
     Neuron neuron;
-    private final static float DELTA = 0.0001f;
+    private final static double DELTA = 0.0001;
 
     @Test
-    public void constructorWeightedTest() {
+    public void testConstructorWeighted() {
         int len = 4;
         double[] weight = new double[len];
 
@@ -31,7 +29,7 @@ public class NeuronTest {
     }
 
     @Test
-    public void constructorValueTest() {
+    public void testConstructorValue() {
         double value = 0.7;
 
         Neuron neuron = new Neuron(value);
@@ -43,18 +41,19 @@ public class NeuronTest {
     }
 
     @Test
-    public void weightRangeTest() { // Is static modifier
+    public void testWeightRange() {
+
         Neuron.setRangeWeight(-2, -1);
         assertEquals(-2, Neuron.getMinWeightValue(), DELTA);
         assertEquals(-1, Neuron.getMaxWeightValue(), DELTA);
 
-        Neuron.setRangeWeight(-1, 1);
+        Neuron.setRangeWeight(-1, 0);
         assertEquals(-1, Neuron.getMinWeightValue(), DELTA);
-        assertEquals(1, Neuron.getMaxWeightValue(), DELTA);
+        assertEquals(0, Neuron.getMaxWeightValue(), DELTA);
     }
 
     @Test
-    public void getAndSetWeightsTest() {
+    public void testGetAndSetWeights() {
         double[] weights = {0.1, 0.2, 0.3};
 
         neuron = new Neuron(0.5);
@@ -64,7 +63,7 @@ public class NeuronTest {
     }
 
     @Test
-    public void getAndSetBiasTest() {
+    public void testGetAndSetBias() {
         double bias = -0.3;
 
         neuron = new Neuron(0.5);
@@ -74,7 +73,7 @@ public class NeuronTest {
     }
 
     @Test
-    public void getAndSetValueTest() {
+    public void testGetAndSetValue() {
         double value = 0.8;
 
         neuron = new Neuron(0.5);
@@ -84,7 +83,7 @@ public class NeuronTest {
     }
 
     @Test
-    public void getAndSetGradientTest() {
+    public void testGetAndSetGradient() {
         double gradient = -0.2;
 
         neuron = new Neuron(0.5);
@@ -94,7 +93,7 @@ public class NeuronTest {
     }
 
     @Test
-    public void constructorEmptyWeightsTest() {
+    public void testConstructorEmptyWeights() {
         double[] weights = {};
 
         neuron = new Neuron(weights, 0.5);
@@ -103,7 +102,7 @@ public class NeuronTest {
     }
 
     @Test
-    public void constructorNegativeBiasTest() {
+    public void testConstructorNegativeBias() {
         double bias = -0.7;
 
         neuron = new Neuron(new double[]{0.1, 0.2}, bias);
@@ -112,7 +111,7 @@ public class NeuronTest {
     }
 
     @Test
-    public void constructorNegativeValueTest() {
+    public void testConstructorNegativeValue() {
         double value = -0.5;
 
         neuron = new Neuron(value);
