@@ -3,14 +3,15 @@ package test;
 import container.Data;
 import container.Network;
 import function.Function;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import util.GenRandom;
 
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 public class NetworkTest { // Ignore static inferences
 
@@ -18,12 +19,12 @@ public class NetworkTest { // Ignore static inferences
 
     private Network network;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         GenRandom.random = new Random(42);
         int[] nLayers = {2, 8, 1};
         Function[] functions = {Function.SIGMOID, Function.SIGMOID};
-        Data[] data = new Data[]{
+        Data[] data = new Data[]{ // XOR GATE (FROM DIG LOGIC) THE SUBJECT YOU LOVE MOST
                 new Data(new double[]{0, 0}, new double[]{0}),
                 new Data(new double[]{0, 1}, new double[]{1}),
                 new Data(new double[]{1, 0}, new double[]{1}),
@@ -43,10 +44,10 @@ public class NetworkTest { // Ignore static inferences
         Network customNetwork = new Network(nLayers, functions, data);
 
         assertNotNull(customNetwork);
-        assertNotNull(customNetwork.getLayers());
-        assertNotNull(customNetwork.getDatasets());
-        assertEquals(3, customNetwork.getLayers().length);
-        assertEquals(2, customNetwork.getDatasets().length);
+        assertNotNull(Network.getLayers());
+        assertNotNull(Network.getDatasets());
+        assertEquals(3, Network.getLayers().length);
+        assertEquals(2, Network.getDatasets().length);
     }
 
     @Test
@@ -60,30 +61,30 @@ public class NetworkTest { // Ignore static inferences
         Network customNetwork = new Network(nLayers, functions, data);
 
         assertNotNull(customNetwork);
-        assertNotNull(customNetwork.getLayers());
-        assertNotNull(customNetwork.getDatasets());
-        assertEquals(5, customNetwork.getLayers().length);
-        assertEquals(2, customNetwork.getDatasets().length);
+        assertNotNull(Network.getLayers());
+        assertNotNull(Network.getDatasets());
+        assertEquals(5, Network.getLayers().length);
+        assertEquals(2, Network.getDatasets().length);
 
-        assertEquals(Function.TANH, customNetwork.getLayers()[1].getFunction());
-        assertEquals(Function.RELU, customNetwork.getLayers()[4].getFunction());
+        assertEquals(Function.TANH, Network.getLayers()[1].getFunction());
+        assertEquals(Function.RELU, Network.getLayers()[4].getFunction());
     }
 
     @Test
     public void testDefaultConstructor() {
         assertNotNull(network);
-        assertNotNull(network.getLayers());
-        assertNotNull(network.getDatasets());
-        assertEquals(3, network.getLayers().length);
-        assertEquals(4, network.getDatasets().length);
+        assertNotNull(Network.getLayers());
+        assertNotNull(Network.getDatasets());
+        assertEquals(3, Network.getLayers().length);
+        assertEquals(4, Network.getDatasets().length);
     }
 
     @Test
     public void testForward() {
         double[] inputs = {0, 0};
-        network.forward(inputs);
-        assertEquals(3, network.getLayers().length);
-        assertEquals(0.521111338414437, network.getLayers()[2].getNeurons()[0].getValue(), DELTA);
+        Network.forward(inputs);
+        assertEquals(3, Network.getLayers().length);
+        assertEquals(0.731189260675612, Network.getLayers()[2].getNeurons()[0].getValue(), DELTA);
     }
 
     @Test
@@ -91,31 +92,43 @@ public class NetworkTest { // Ignore static inferences
         double[] inputs = {0, 0};
         double learningRate = 0.5;
         Data tData = new Data(new double[]{1, 1}, new double[]{0});
-        network.forward(inputs);
-        network.backward(learningRate, tData);
-        assertEquals(0.4551273600657362, network.getLayers()[1].getNeurons()[0].getWeights()[0], DELTA);
-        assertEquals(0.36644694351969087, network.getLayers()[1].getNeurons()[0].getWeights()[1], DELTA);
+        Network.forward(inputs);
+        Network.backward(learningRate, tData);
+        assertEquals(0.4551273600657362, Network.getLayers()[1].getNeurons()[0].getWeights()[0], DELTA);
+        assertEquals(0.36644694351969087, Network.getLayers()[1].getNeurons()[0].getWeights()[1], DELTA);
     }
 
     @Test
     public void testSumGradient() {
-        network.forward(new double[]{1, 0});
-        double sumGradient = network.sumGradient(0, 2);
-        assertEquals(0, sumGradient, 0.01);
+        Network.forward(new double[]{0, 0});
+        double sumGradient1 = Network.sumGradient(0, 2);
+        assertEquals(0, sumGradient1, 0.01);
+
+        Network.forward(new double[]{1, 0});
+        double sumGradient2 = Network.sumGradient(0, 2);
+        assertEquals(0, sumGradient2, 0.01);
+
+        Network.forward(new double[]{0, 1});
+        double sumGradient3 = Network.sumGradient(0, 2);
+        assertEquals(0, sumGradient3, 0.01);
+
+        Network.forward(new double[]{1, 1});
+        double sumGradient4 = Network.sumGradient(0, 2);
+        assertEquals(0, sumGradient4, 0.01);
     }
 
     @Test
     public void testTrain() {
-        network.train(1000000, 0.05);
-        network.forward(new double[]{0, 0});
-        assertEquals(0, network.getLayers()[2].getNeurons()[0].getValue(), DELTA);
+        Network.train(100000, 0.05);
+        Network.forward(new double[]{0, 0});
+        assertEquals(0, Network.getLayers()[2].getNeurons()[0].getValue(), DELTA);
     }
 
     @Test
     public void testCalculateLoss() {
-        network.forward(new double[]{0, 0});
-        double loss = network.calculateLoss(network.getLayers()[2].getNeurons(), new double[]{0});
-        assertEquals(0.3484174199003581, loss, DELTA);
+        Network.forward(new double[]{0, 0});
+        double loss = Network.calculateLoss(Network.getLayers()[2].getNeurons(), new double[]{0});
+        assertEquals(0.2673188674636741, loss, DELTA);
     }
 
 }

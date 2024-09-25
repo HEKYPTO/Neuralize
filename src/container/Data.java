@@ -2,20 +2,20 @@ package container;
 
 public class Data {
 
-    private double[] data;
+    private double[] input;
     private double[] output;
 
-    public Data(double[] data, double[] output) {
-        this.data = data;
+    public Data(double[] input, double[] output) {
+        this.input = input;
         this.output = output;
     }
 
-    public double[] getData() {
-        return data;
+    public double[] getInput() {
+        return input;
     }
 
-    public void setData(double[] data) {
-        this.data = data;
+    public void setInput(double[] input) {
+        this.input = input;
     }
 
     public double[] getOutput() {

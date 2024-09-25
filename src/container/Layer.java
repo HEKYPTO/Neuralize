@@ -31,29 +31,21 @@ public class Layer {
     }
 
     public double applyActivation(double x) {
-        switch (function) {
-            case SIGMOID:
-                return Activation.sigmoid(x);
-            case TANH:
-                return Activation.tanh(x);
-            case RELU:
-                return Activation.relu(x);
-            default:
-                throw new IllegalArgumentException("Unknown activation function: " + function);
-        }
+        return switch (function) {
+            case SIGMOID -> Activation.sigmoid(x);
+            case TANH -> Activation.tanh(x);
+            case RELU -> Activation.relu(x);
+            default -> throw new IllegalArgumentException("Unknown activation function: " + function);
+        };
     }
 
     public double applyActivationDerivative(double x) {
-        switch (function) {
-            case SIGMOID:
-                return Activation.sigmoidDerivative(x);
-            case TANH:
-                return Activation.tanhDerivative(x);
-            case RELU:
-                return Activation.reluDerivative(x);
-            default:
-                throw new IllegalArgumentException("Unknown activation function: " + function);
-        }
+        return switch (function) {
+            case SIGMOID -> Activation.sigmoidDerivative(x);
+            case TANH -> Activation.tanhDerivative(x);
+            case RELU -> Activation.reluDerivative(x);
+            default -> throw new IllegalArgumentException("Unknown activation function: " + function);
+        };
     }
 
     public Neuron[] getNeurons() {

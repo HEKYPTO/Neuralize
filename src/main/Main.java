@@ -3,44 +3,49 @@ package main;
 import container.Data;
 import container.Network;
 import function.Function;
+import util.DataReader;
+import util.ImageProcessor;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        int[] layerSizes = {2, 6, 1};
-        Function[] activationFunctions = {Function.SIGMOID, Function.SIGMOID};
+//       int[] layerSizes = {784, 241, 88, 10};
+//       Function[] activationFunctions = {Function.TANH, Function.TANH, Function.TANH};
+//
+//       Data[] data = DataReader.loader("mnist-train-processed.txt"); // Data so large, ask me for Dataset, I'll give it to you !
+//
+//       Network network = new Network(layerSizes, activationFunctions, data);
+//
+//       Network.train(20, 0.000761); // Takes around 5 mins to train, too long to train in test room !
+//
+//       network.save("src/saved_weights.txt");
 
-        double[] input1 = new double[] {0, 0};
-        double[] input2 = new double[] {0, 1};
-        double[] input3 = new double[] {1, 0};
-        double[] input4 = new double[] {1, 1};
+         Network.load("src/saved_weights.txt");
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Input filename from sample folder: ");
+         String line = scanner.nextLine().trim();
+         double[] sample = ImageProcessor.process("src/image/" + line + ".jpg");
+         double[] result = Network.predict(sample);
+         int index = findIndexOfMax(result);
 
-        double[] out1 = new double[] {0};
-        double[] out2 = new double[] {1};
-        double[] out3 = new double[] {1};
-        double[] out4 = new double[] {0};
+         System.out.printf("The prediction is: %d Confidence: %.6f%n", index, result[index]);
+    }
 
-        Data[] trainingData = new Data[]{
-            new Data(input1, out1),
-            new Data(input2, out2),
-            new Data(input3, out3),
-            new Data(input4, out4),
-        };
+    public static int findIndexOfMax(double[] values) {
+        int indexOfMax = 0;
+        double max = values[0];
 
-        Network network = new Network(layerSizes, activationFunctions, trainingData);
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] > max) {
+                max = values[i];
+                indexOfMax = i;
+            }
+        }
 
-        network.displayOutputLayer();
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println();
-        System.out.println("Start Training ? : ");
-        String _k = sc.nextLine();
-
-        Network.train(1_000_000, 0.05);
-
-        network.displayOutputLayer();
+        return indexOfMax;
     }
 }
